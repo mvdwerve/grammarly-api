@@ -73,6 +73,8 @@ export interface InfoMessage extends BaseMessage {
   extDomain: string;
 
   sid: number;
+
+  documentContext: any;
 }
 
 /**
@@ -131,7 +133,17 @@ export const buildInitialMessage = (): InfoMessage => ({
   extDomain: 'keep.google.com',
   action: 'start',
   id: 0,
-  sid: 0
+  sid: 0,
+  documentContext: {
+    goals: [],
+    domain: "academic",
+    audience: "expert",
+    style: "formal",
+    emotions: [
+      "analytical"
+    ],
+    dialect: "american"
+  }
 });
 
 export const buildOTMessage = (str: string): OTMessage => ({
